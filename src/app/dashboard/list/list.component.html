@@ -1,0 +1,28 @@
+<div class="table-responsive">   
+<table class="table table-striped">
+  <th>Name</th>
+  <th>Email</th>
+  <th>Department</th>
+  <th>Salary</th>
+  <th>Description</th>
+  <tr class="divText" *ngIf="userList.length==0">
+    <td>
+        <div style="display:block">No Records Available</div>
+    </td>
+  </tr>
+  
+  <tr *ngFor="let user of userList; let i=index">
+    <td>{{user.userName}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.department}}</td>
+    <td>{{user.salary}}</td>
+    <td>{{user.description}}</td>
+    <td>
+    <input type="submit" value="Edit" class="btn btn-primary" (click)=edit(i)>
+    <input type="submit" value="Delete" class="btn btn-danger" (click)=delete(i)>
+  </td>
+  </tr>
+</table>
+<hr>
+<input type="submit" value="ADD USER" id="addButton" class="btn btn-success" (click)=add()>
+</div>
